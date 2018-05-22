@@ -15,8 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.hc.healthco.MainActivity;
 import com.hc.healthco.R;
+import com.hc.healthco.SurveyActivity;
 
 public class SignUpActivity extends AppCompatActivity {
     private EditText regUser, regPass, regEmail;
@@ -51,9 +51,9 @@ public class SignUpActivity extends AppCompatActivity {
                             if (task.isSuccessful())
                             {
                                 firebaseAuth.signOut();
-                                Toast.makeText(SignUpActivity.this, "Registration Complete, login", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUpActivity.this, "Registration Complete, please answer some questions first", Toast.LENGTH_SHORT).show();
                                 finish();
-                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                                startActivity(new Intent(SignUpActivity.this, SurveyActivity.class));
                             }
                             else
                             {
@@ -69,7 +69,7 @@ public class SignUpActivity extends AppCompatActivity {
         userSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                startActivity(new Intent(SignUpActivity.this, SurveyActivity.class));
             }
         });
     }
