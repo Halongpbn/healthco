@@ -6,141 +6,178 @@
     android:layout_height="match_parent"
     tools:context=".SurveyActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recylcer_view"
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/survey_activity_toolbar"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:textColor="#ffffff"
-            app:title="Survey"></android.support.v7.widget.Toolbar>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="#ffffff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/survey_activity_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorAccent"
+                android:textColor="#ffffff"
+                app:title="Survey"></android.support.v7.widget.Toolbar>
 
-        <TextView
-            android:id="@+id/surveyInfo"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:text="This information is used to calculate your basic metabolic rate (BMR)"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/survey_activity_toolbar" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/button_style"
+                android:text="Button"
+                android:textColor="#ffffff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/textInputLayout3"
-            android:layout_width="368dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.547">
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/heightInfo"
+                android:layout_marginBottom="23dp">
+
+                <RadioButton
+                    android:id="@+id/active1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="sedentary" />
+
+                <RadioButton
+                    android:id="@+id/active2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="lightly active" />
+
+                <RadioButton
+                    android:id="@+id/active3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="moderately active" />
+
+                <RadioButton
+                    android:id="@+id/active4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="very active" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/surveyInfo"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="97dp"
+                android:text="This information is used to calculate your basic metabolic rate (BMR)"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/survey_activity_toolbar" />
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/heightInfo"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_width="153dp"
+                android:layout_height="61dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="196dp"
                 android:hint="Height(in cm)" />
-        </android.support.design.widget.TextInputLayout>
 
-        <RadioGroup
-            android:layout_width="201dp"
-            android:layout_height="66dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.194"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
-
-            <RadioButton
-                android:id="@+id/rad_female"
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="201dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Female" />
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/heightInfo"
+                android:layout_marginTop="152dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.194"
+                app:layout_constraintStart_toStartOf="parent">
 
-            <RadioButton
-                android:id="@+id/rad_male"
-                android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/rad_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Female" />
+
+                <RadioButton
+                    android:id="@+id/rad_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Male"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="359dp" />
+            </RadioGroup>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                android:layout_width="167dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Male"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="225dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/weightInfo"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Weight(in lbs)" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayout"
+                android:layout_width="153dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="161dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="359dp" />
-        </RadioGroup>
+                app:layout_constraintTop_toBottomOf="@+id/surveyInfo">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/textInputLayout2"
-            android:layout_width="368dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline3">
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ageInfo"
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Age" />
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/weightInfo"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:hint="Weight(in lbs)" />
-        </android.support.design.widget.TextInputLayout>
+            </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/textInputLayout"
-            android:layout_width="368dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/surveyInfo">
+        </RelativeLayout>
+    </ScrollView>
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/ageInfo"
-                android:layout_width="105dp"
-                android:layout_height="wrap_content"
-                android:hint="Age" />
-        </android.support.design.widget.TextInputLayout>
-
-    </android.support.v7.widget.RecyclerView>
 
 </android.support.constraint.ConstraintLayout>
