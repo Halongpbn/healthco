@@ -17,12 +17,20 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="66dp">
+        android:layout_above="@id/login_activity_toolbar"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_activity_toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView2"
@@ -69,7 +77,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Height (form: ft'in	&quot; ex: 5'6	&quot;)"
+                    android:hint= "Height (form: ft_in ex: 5_6)"></android.support.design.widget.TextInputEditText>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -99,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="sedentary ( <1 day)" />
+                    android:text="@string/sedentary" />
 
                 <RadioButton
                     android:id="@+id/radioButton2"
@@ -117,8 +125,8 @@
 
                 <RadioButton
                     android:id="@+id/radioButton4"
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="very active (6-7 days)" />
             </RadioGroup>
